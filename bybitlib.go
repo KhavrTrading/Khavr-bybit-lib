@@ -1,14 +1,19 @@
-// Package bybitlib provides a Go client for the Bybit REST API.
+// Package bybitlib provides a Go client for the Bybit REST and WebSocket APIs.
 //
 // Usage:
 //
 //	client := bybitlib.NewBybitClient("apiKey", "apiSecret")
 //	resp, err := client.CreateOrder(&bybitlib.CreateOrderRequest{...})
+//
+//	wsClient := bybitlib.NewBybitWsClient("apiKey", "apiSecret")
+//	wsClient.SetPositionCallback(func(ev bybitlib.PositionEvent) { ... })
 package bybitlib
 
 import (
 	"github.com/KhavrTrading/Khavr-bybit-lib/bybit"
 	"github.com/KhavrTrading/Khavr-bybit-lib/bybit/bybit_models"
+	"github.com/KhavrTrading/Khavr-bybit-lib/bybit_ws"
+	"github.com/KhavrTrading/Khavr-bybit-lib/bybit_ws/bybit_ws_models"
 )
 
 // BybitClient is the REST API client for synchronous operations.
@@ -69,6 +74,48 @@ type WalletCoin = bybit_models.WalletCoin
 // ── Interfaces ──
 
 type ParamBuilder = bybit_models.ParamBuilder
+
+// ── WebSocket client ──
+
+// BybitWsClient is the private WebSocket client for real-time data streams.
+type BybitWsClient = bybit_ws.BybitWsClient
+
+// NewBybitWsClient creates a new Bybit private WebSocket client.
+func NewBybitWsClient(apiKey, apiSecret string) *BybitWsClient {
+	return bybit_ws.NewBybitWsClient(apiKey, apiSecret)
+}
+
+// ── WebSocket event models ──
+
+type OrderEvent = bybit_ws_models.OrderEvent
+type OrderData = bybit_ws_models.OrderData
+
+type ExecutionEvent = bybit_ws_models.ExecutionEvent
+type ExecutionData = bybit_ws_models.ExecutionData
+
+type FastExecutionEvent = bybit_ws_models.FastExecutionEvent
+type FastExecutionData = bybit_ws_models.FastExecutionData
+
+type PositionEvent = bybit_ws_models.PositionEvent
+type PositionData = bybit_ws_models.PositionData
+
+type WalletEvent = bybit_ws_models.WalletEvent
+type WalletData_WS = bybit_ws_models.WalletData
+type WalletCoinWS = bybit_ws_models.WalletCoinWS
+
+// ── WebSocket channel managers (pub/sub) ──
+
+type OrderChannel = bybit_ws.OrderChannel
+type ExecutionChannel = bybit_ws.ExecutionChannel
+type FastExecutionChannel = bybit_ws.FastExecutionChannel
+type PositionChannel = bybit_ws.PositionChannel
+type WalletChannel = bybit_ws.WalletChannel
+
+var NewOrderChannel = bybit_ws.NewOrderChannel
+var NewExecutionChannel = bybit_ws.NewExecutionChannel
+var NewFastExecutionChannel = bybit_ws.NewFastExecutionChannel
+var NewPositionChannel = bybit_ws.NewPositionChannel
+var NewWalletChannel = bybit_ws.NewWalletChannel
 
 // ── Constants ──
 

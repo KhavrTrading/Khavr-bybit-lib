@@ -33,6 +33,9 @@ type CreateOrderResult = bybit_models.CreateOrderResult
 type AmendOrderRequest = bybit_models.AmendOrderRequest
 type AmendOrderResponse = bybit_models.AmendOrderResponse
 
+type CancelOrderRequest = bybit_models.CancelOrderRequest
+type CancelOrderResponse = bybit_models.CancelOrderResponse
+
 type OrderRealtimeRequest = bybit_models.OrderRealtimeRequest
 type OrderRealtimeResponse = bybit_models.OrderRealtimeResponse
 type OrderRealtimeItem = bybit_models.OrderRealtimeItem
@@ -70,6 +73,14 @@ type WalletBalanceResponse = bybit_models.WalletBalanceResponse
 type WalletBalanceData = bybit_models.WalletBalanceData
 type WalletAccount = bybit_models.WalletAccount
 type WalletCoin = bybit_models.WalletCoin
+
+// ── Spread models ──
+
+type SpreadInstrumentRequest = bybit_models.SpreadInstrumentRequest
+type SpreadInstrumentResponse = bybit_models.SpreadInstrumentResponse
+type SpreadInstrumentResult = bybit_models.SpreadInstrumentResult
+type SpreadInstrumentItem = bybit_models.SpreadInstrumentItem
+type SpreadLeg = bybit_models.SpreadLeg
 
 // ── Interfaces ──
 

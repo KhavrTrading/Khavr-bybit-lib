@@ -72,10 +72,62 @@ type ParamBuilder = bybit_models.ParamBuilder
 
 // ── Constants ──
 
-var (
+const (
+	// Categories
+	CategoryLinear  = bybit_models.CategoryLinear
+	CategoryInverse = bybit_models.CategoryInverse
+	CategorySpot    = bybit_models.CategorySpot
+	CategoryOption  = bybit_models.CategoryOption
+
+	// Margin modes
 	MarginModeIsolated  = bybit_models.MarginModeIsolated
 	MarginModeRegular   = bybit_models.MarginModeRegular
 	MarginModePortfolio = bybit_models.MarginModePortfolio
 	MarginModeCross     = bybit_models.MarginModeCross
-	MarginModeUnknown   = bybit_models.MarginModeUnknown
+
+	// Trade sides
+	SideBuy  = bybit_models.SideBuy
+	SideSell = bybit_models.SideSell
+
+	// Order types
+	OrderTypeLimit  = bybit_models.OrderTypeLimit
+	OrderTypeMarket = bybit_models.OrderTypeMarket
+
+	// Time in force
+	TimeInForceGTC      = bybit_models.TimeInForceGTC
+	TimeInForceIOC      = bybit_models.TimeInForceIOC
+	TimeInForceFOK      = bybit_models.TimeInForceFOK
+	TimeInForcePostOnly = bybit_models.TimeInForcePostOnly
+
+	// Position index
+	PositionIdxOneWay   = bybit_models.PositionIdxOneWay
+	PositionIdxBuySide  = bybit_models.PositionIdxBuySide
+	PositionIdxSellSide = bybit_models.PositionIdxSellSide
+
+	// Trigger price types
+	TriggerByLastPrice  = bybit_models.TriggerByLastPrice
+	TriggerByIndexPrice = bybit_models.TriggerByIndexPrice
+	TriggerByMarkPrice  = bybit_models.TriggerByMarkPrice
+
+	// TP/SL modes
+	TpslModeFull    = bybit_models.TpslModeFull
+	TpslModePartial = bybit_models.TpslModePartial
+
+	// Account types
+	AccountTypeUnified  = bybit_models.AccountTypeUnified
+	AccountTypeContract = bybit_models.AccountTypeContract
+
+	// Order status
+	OrderStatusNew             = bybit_models.OrderStatusNew
+	OrderStatusPartiallyFilled = bybit_models.OrderStatusPartiallyFilled
+	OrderStatusFilled          = bybit_models.OrderStatusFilled
+	OrderStatusCancelled       = bybit_models.OrderStatusCancelled
+	OrderStatusRejected        = bybit_models.OrderStatusRejected
+	OrderStatusDeactivated     = bybit_models.OrderStatusDeactivated
+
+	// STP modes
+	STPModeNone        = bybit_models.STPModeNone
+	STPModeCancelMaker = bybit_models.STPModeCancelMaker
+	STPModeCancelTaker = bybit_models.STPModeCancelTaker
+	STPModeCancelBoth  = bybit_models.STPModeCancelBoth
 )

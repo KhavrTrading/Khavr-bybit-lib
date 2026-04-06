@@ -1,0 +1,81 @@
+// Package bybitlib provides a Go client for the Bybit REST API.
+//
+// Usage:
+//
+//	client := bybitlib.NewBybitClient("apiKey", "apiSecret")
+//	resp, err := client.CreateOrder(&bybitlib.CreateOrderRequest{...})
+package bybitlib
+
+import (
+	"github.com/KhavrTrading/Khavr-bybit-lib/bybit"
+	"github.com/KhavrTrading/Khavr-bybit-lib/bybit/bybit_models"
+)
+
+// BybitClient is the REST API client for synchronous operations.
+type BybitClient = bybit.BybitClient
+
+// NewBybitClient creates a new Bybit REST client with the given credentials.
+func NewBybitClient(apiKey, apiSecret string) *BybitClient {
+	return bybit.NewBybitClient(apiKey, apiSecret)
+}
+
+// ── Order models ──
+
+type CreateOrderRequest = bybit_models.CreateOrderRequest
+type CreateOrderResponse = bybit_models.CreateOrderResponse
+type CreateOrderResult = bybit_models.CreateOrderResult
+
+type AmendOrderRequest = bybit_models.AmendOrderRequest
+type AmendOrderResponse = bybit_models.AmendOrderResponse
+
+type OrderRealtimeRequest = bybit_models.OrderRealtimeRequest
+type OrderRealtimeResponse = bybit_models.OrderRealtimeResponse
+type OrderRealtimeItem = bybit_models.OrderRealtimeItem
+
+// ── Position models ──
+
+type PositionListRequest = bybit_models.PositionListRequest
+type PositionListResponse = bybit_models.PositionListResponse
+type PositionListItem = bybit_models.PositionListItem
+
+type TradingStopRequest = bybit_models.TradingStopRequest
+type TradingStopResponse = bybit_models.TradingStopResponse
+
+// ── Closed PnL models ──
+
+type ClosedPnlRequest = bybit_models.ClosedPnlRequest
+type ClosedPnlResponse = bybit_models.ClosedPnlResponse
+type ClosedPnlResult = bybit_models.ClosedPnlResult
+type ClosedPnlEntry = bybit_models.ClosedPnlEntry
+
+// ── Closed options positions models ──
+
+type ClosedOptionsPositionsRequest = bybit_models.ClosedOptionsPositionsRequest
+type ClosedOptionsPositionsResponse = bybit_models.ClosedOptionsPositionsResponse
+type ClosedOptionsPositionsResult = bybit_models.ClosedOptionsPositionsResult
+type ClosedOptionsPositionEntry = bybit_models.ClosedOptionsPositionEntry
+
+// ── Account models ──
+
+type SetMarginModeRequest = bybit_models.SetMarginModeRequest
+type SetMarginModeResponse = bybit_models.SetMarginModeResponse
+
+type WalletBalanceRequest = bybit_models.WalletBalanceRequest
+type WalletBalanceResponse = bybit_models.WalletBalanceResponse
+type WalletBalanceData = bybit_models.WalletBalanceData
+type WalletAccount = bybit_models.WalletAccount
+type WalletCoin = bybit_models.WalletCoin
+
+// ── Interfaces ──
+
+type ParamBuilder = bybit_models.ParamBuilder
+
+// ── Constants ──
+
+var (
+	MarginModeIsolated  = bybit_models.MarginModeIsolated
+	MarginModeRegular   = bybit_models.MarginModeRegular
+	MarginModePortfolio = bybit_models.MarginModePortfolio
+	MarginModeCross     = bybit_models.MarginModeCross
+	MarginModeUnknown   = bybit_models.MarginModeUnknown
+)

@@ -1,5 +1,8 @@
 # Khavr-bybit-lib
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/KhavrTrading/Khavr-bybit-lib.svg)](https://pkg.go.dev/github.com/KhavrTrading/Khavr-bybit-lib)
+[![Go Report Card](https://goreportcard.com/badge/github.com/KhavrTrading/Khavr-bybit-lib)](https://goreportcard.com/report/github.com/KhavrTrading/Khavr-bybit-lib)
+
 Go client library for the Bybit REST API.
 
 ## Installation
